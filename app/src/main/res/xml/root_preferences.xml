@@ -1,0 +1,61 @@
+<!--
+  ~ Copyright 2018 The app Open Source Project
+  ~
+  ~ Licensed under the Apache License, Version 2.0 (the "License");
+  ~ you may not use this file except in compliance with the License.
+  ~ You may obtain a copy of the License at
+  ~
+  ~      http://www.apache.org/licenses/LICENSE-2.0
+  ~
+  ~ Unless required by applicable law or agreed to in writing, software
+  ~ distributed under the License is distributed on an "AS IS" BASIS,
+  ~ WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+  ~ See the License for the specific language governing permissions and
+  ~ limitations under the License.
+  -->
+
+<androidx.preference.PreferenceScreen
+xmlns:android="http://schemas.android.com/apk/res/android"
+xmlns:app="http://schemas.android.com/apk/res-auto">
+
+<PreferenceCategory app:title="Notificaciones"
+    android:textAppearance="@android:style/TextAppearance.Large">
+
+    <ListPreference
+        app:defaultValue="Nota"
+        app:entries="@array/reply_entries"
+        app:entryValues="@array/reply_values"
+        app:key="reply"
+        app:title="Tono de Notificación"
+        app:useSimpleSummaryProvider="true" />
+
+    <SwitchPreferenceCompat
+        app:key="alarma"
+        app:title="Notificar con Alarma"
+        app:summary="Usar una alarma para notificar de un recordatorio"/>
+
+    <ListPreference
+        app:defaultValue="Rigtone"
+        app:entries="@array/reply_entries"
+        app:entryValues="@array/reply_values"
+        app:key="rigtone"
+        app:title="Tono de Alarma"
+        app:useSimpleSummaryProvider="true"
+        app:dependency="alarma" />
+
+    <SwitchPreferenceCompat
+        app:key="vibrate"
+        app:title="Vibración"
+        app:summary="Vibrar al notificar"/>
+
+</PreferenceCategory>
+
+<PreferenceCategory app:title="Aplicación">
+
+    <SwitchPreferenceCompat
+        app:key="format"
+        app:title="Formato de 24 Horas" />
+
+</PreferenceCategory>
+
+</androidx.preference.PreferenceScreen>

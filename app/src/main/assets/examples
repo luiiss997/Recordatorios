@@ -1,0 +1,97 @@
+Calendar c=Calendar.getInstance();
+        int horaActual=c.get(Calendar.HOUR);
+        if (horaActual>=7&&horaActual<12){
+            subtitleToolbar.setText("Buenos  Días");
+        }else if (horaActual>=12&&horaActual<19){
+            subtitleToolbar.setText("Buenas Tardes");
+        }else if(horaActual>=19&&horaActual<24 || horaActual>1&&horaActual<7){
+            subtitleToolbar.setText("Buenas Noches");
+        }
+
+
+Log.d("thien.van","on Click onBindViewHolder");
+
+public void guardarDescartados(){
+        SharedPreferences sp = PreferenceManager
+                .getDefaultSharedPreferences(context);
+
+        SharedPreferences.Editor edit = sp.edit();
+        Gson gson=new Gson();
+        String json=gson.toJson(lista);
+        edit.putString("task list", json);
+        edit.apply();
+    }
+
+    public void cargarDescartados(){
+        SharedPreferences sp = PreferenceManager
+                .getDefaultSharedPreferences(context);
+
+        Gson gson= new Gson();
+        String json = sp.getString("task list", null);
+        Type type = new TypeToken<ArrayList<Recordatorio>>() {}.getType();
+        lista= gson.fromJson(json,type);
+        if (lista==null){
+            lista=new ArrayList<Recordatorio>();
+        }
+    }
+
+    public void guardarRealizados(){
+        SharedPreferences sp = PreferenceManager
+                .getDefaultSharedPreferences(context);
+
+        SharedPreferences.Editor edit = sp.edit();
+        Gson gson=new Gson();
+        String json=gson.toJson(lista);
+        edit.putString("task list", json);
+        edit.apply();
+    }
+
+    public void cargarRealizados(){
+        SharedPreferences sp = PreferenceManager
+                .getDefaultSharedPreferences(context);
+
+        Gson gson= new Gson();
+        String json = sp.getString("task list", null);
+        Type type = new TypeToken<ArrayList<Recordatorio>>() {}.getType();
+        lista= gson.fromJson(json,type);
+        if (lista==null){
+            lista=new ArrayList<Recordatorio>();
+        }
+    }
+
+
+
+    InputMethodManager inputMethodManager = (InputMethodManager)getSystemService(Context.INPUT_METHOD_SERVICE);
+                inputMethodManager.hideSoftInputFromWindow(searchView.getWindowToken(), 0);
+
+
+
+    String canal= Integer.toString(ID); *//CrearAlarma
+                crearCanalUnico(canal);
+
+    public void crearCanalUnico(String ID){
+            if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.O) {
+                CharSequence name = "Reminders";
+                String description = "Notificacion";
+                int importance = NotificationManager.IMPORTANCE_HIGH;
+
+                NotificationChannel channel = new NotificationChannel(ID, name, importance);
+                channel.setDescription(description);
+                channel.enableVibration(true);
+                channel.setLockscreenVisibility(NotificationCompat.VISIBILITY_PUBLIC);
+                // Register the channel with the system; you can't change the importance
+                // or other notification behaviors after this
+                NotificationManager notificationManager = (NotificationManager)
+                        context.getSystemService(Context.NOTIFICATION_SERVICE);
+                notificationManager.createNotificationChannel(channel);
+            }
+
+    }
+
+
+    PowerManager power = (PowerManager) context.getSystemService(Context.POWER_SERVICE);
+                    PowerManager.WakeLock wl = power.newWakeLock(PowerManager.PARTIAL_WAKE_LOCK |
+                            PowerManager.ACQUIRE_CAUSES_WAKEUP |
+                            PowerManager.ON_AFTER_RELEASE, "reminders::tag");
+                    wl.acquire(3000);
+                    wl.release();

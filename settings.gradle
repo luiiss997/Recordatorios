@@ -1,0 +1,2 @@
+include ':app', ':colorpicker'
+project(':colorpicker').projectDir = new File('datos/BottomSheet-master/colorpicker')

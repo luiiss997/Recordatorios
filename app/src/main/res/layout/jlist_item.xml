@@ -1,0 +1,88 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_margin="4dp"
+    android:background="@drawable/rouded_corners"
+    android:elevation="4dp">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@drawable/rouded_corners"
+        android:layout_margin="4dp"
+        android:elevation="4dp"
+        android:orientation="vertical" >
+
+        <RelativeLayout
+            android:id="@+id/cardViewR"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@drawable/selector"
+            android:orientation="vertical"
+            android:padding="8dp">
+
+            <ImageView
+                android:id="@+id/circunference"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentStart="true"
+                android:layout_alignParentTop="true"
+                android:paddingStart="0dp"
+                android:paddingTop="3dp"
+                android:paddingEnd="-1dp"
+                android:paddingBottom="0dp"
+                app:srcCompat="@drawable/ic_radio_button"/>
+
+            <ImageView
+                android:id="@+id/circle"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentStart="true"
+                android:layout_alignParentTop="true"
+                android:paddingStart="0dp"
+                android:paddingTop="3dp"
+                android:paddingEnd="0dp"
+                app:srcCompat="@drawable/color_circle_r" />
+
+            <TextView
+                android:id="@+id/Nombre"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textColor="@color/md_black"
+                android:layout_toEndOf="@+id/circle"
+                android:text="Nombre del Recordatorio"
+                android:textAppearance="@android:style/TextAppearance.Large" />
+
+            <TextView
+                android:id="@+id/Alarma"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/Nombre"
+                android:text="Alarma"
+                android:textAppearance="@android:style/TextAppearance.Medium" />
+
+            <ImageView
+                android:id="@+id/OptionMenu"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentTop="true"
+                android:layout_alignParentEnd="true"
+                android:layout_marginEnd="-10dp"
+                android:showAsAction="always"
+                app:srcCompat="@drawable/ic_more_vert_black_24dp" />
+
+            <ImageView
+                android:layout_width="24sp"
+                android:layout_height="24sp"
+                android:layout_below="@id/Nombre"
+                android:layout_alignParentRight="true"
+                android:layout_marginTop="0dp"
+                android:layout_marginRight="-2dp"
+                app:srcCompat="@drawable/crdv_alarm" />
+        </RelativeLayout>
+
+</LinearLayout>
+
+</androidx.cardview.widget.CardView>

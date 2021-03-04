@@ -1,0 +1,103 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context=".VerRecordatorio">
+
+    <androidx.appcompat.widget.Toolbar
+        android:id="@+id/toolbarR"
+        android:layout_width="match_parent"
+        android:layout_height="?attr/actionBarSize"
+        android:background="?attr/colorPrimary"
+        android:theme="@style/AppTheme.NoActionBar"
+        tools:layout_editor_absoluteX="8dp" />
+
+    <TextView
+        android:id="@+id/nombreR"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="8dp"
+        android:layout_marginRight="8dp"
+        android:gravity="center"
+        android:paddingTop="20dp"
+        android:paddingBottom="20dp"
+        android:text="Nombre Recordatorio: "
+        android:textAlignment="center"
+        android:textAppearance="@style/TextAppearance.AppCompat.Medium"
+        android:textColor="#DE000000" />
+
+    <TextView
+        android:id="@+id/alarmaR"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="8dp"
+        android:layout_marginRight="8dp"
+        android:drawableRight="@drawable/config_alarm"
+        android:paddingBottom="20dp"
+        android:text="Alarma: "
+        android:textAppearance="@style/TextAppearance.AppCompat.Medium"
+        android:textColor="#DE000000" />
+
+    <TextView
+        android:id="@+id/repetirR"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="8dp"
+        android:layout_marginRight="8dp"
+        android:paddingBottom="20dp"
+        android:text="Repetir: "
+        android:textAppearance="@style/TextAppearance.AppCompat.Medium"
+        android:textColor="#DE000000" />
+
+    <TextView
+        android:id="@+id/notasR"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="8dp"
+        android:layout_marginRight="8dp"
+        android:paddingBottom="20dp"
+        android:text="Notas: "
+        android:textAppearance="@style/TextAppearance.AppCompat.Medium"
+        android:textColor="#DE000000" />
+
+    <TextView
+        android:id="@+id/pdfR"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="8dp"
+        android:layout_marginRight="8dp"
+        android:enabled="false"
+        android:onClick="verDocumenteo"
+        android:paddingBottom="20dp"
+        android:text="Documento"
+        android:textAppearance="@style/TextAppearance.AppCompat.Medium"
+        android:textColor="#1A237E"
+        android:visibility="gone" />
+
+    <TextView
+        android:id="@+id/locationR"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="8dp"
+        android:drawableEnd="@drawable/conf_location"
+        android:enabled="false"
+        android:longClickable="true"
+        android:onClick="verLocacion"
+        android:text="Toluca de Lerdo"
+        android:textAppearance="@style/TextAppearance.AppCompat.Small"
+        android:textColor="#E91E63"
+        android:textStyle="normal"
+        android:visibility="gone" />
+
+
+    <ImageView
+        android:id="@+id/imagenR"
+        android:layout_width="120dp"
+        android:layout_height="180dp"
+        android:layout_margin="8dp"
+        android:enabled="false"
+        android:onClick="verFotos" />
+
+</LinearLayout>
