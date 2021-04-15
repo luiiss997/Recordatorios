@@ -62,6 +62,7 @@ public class Configurar extends AppCompatActivity implements TimePickerDialog.On
     private Button jButton1;
     private boolean dataReceived = false;
     private boolean format;
+    //Saul
     TextView alarmaRec;
     TextView pdfRec;
     TextView alarmaR;
