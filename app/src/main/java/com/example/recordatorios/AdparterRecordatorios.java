@@ -34,7 +34,7 @@ public class AdparterRecordatorios extends RecyclerView.Adapter<AdparterRecordat
     private int positionR;
     private FragmentActivity fragmentActivity;
     private boolean format;
-
+    //Comentario
     public AdparterRecordatorios(Modelo listaR, Context context, FragmentActivity fragmentActivity) {
         this.listaR = listaR;
         this.mContext = context;
